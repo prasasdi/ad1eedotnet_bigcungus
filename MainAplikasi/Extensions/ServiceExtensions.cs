@@ -35,6 +35,9 @@ namespace MainAplikasi.Extensions
                     Title = "Code Maze API",
                     Version = "v2"
                 });
+                var xmlFile = $"{typeof(MainAplikasi.Presentation.AssemblyReference).Assembly.GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                s.IncludeXmlComments(xmlPath);
             });
         }
 
