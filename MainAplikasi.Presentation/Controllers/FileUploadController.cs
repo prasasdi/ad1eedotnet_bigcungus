@@ -14,10 +14,9 @@ namespace MainAplikasi.Presentation.Controllers
     {
         [HttpPost]
         [Route("upload")]
-        [SwaggerOperation(Summary = "Unggah file", Description = "Route ini digunakan untuk mengunggah file.")]
         public IActionResult UploadFile([FromBody] IFormFile file)
         {
-
+            return Ok();
         }
     }
 }
