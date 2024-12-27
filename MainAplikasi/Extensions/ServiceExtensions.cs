@@ -27,12 +27,12 @@ namespace MainAplikasi.Extensions
             {
                 s.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "Code Maze API",
+                    Title = "Suweger",
                     Version = "v1"
                 });
                 s.SwaggerDoc("v2", new OpenApiInfo
                 {
-                    Title = "Code Maze API",
+                    Title = "Suweger",
                     Version = "v2"
                 });
                 var xmlFile = $"{typeof(MainAplikasi.Presentation.AssemblyReference).Assembly.GetName().Name}.xml";

@@ -4,11 +4,13 @@
         <name>MainAplikasi.Presentation</name>
     </assembly>
     <members>
-        <member name="M:MainAplikasi.Presentation.Controllers.FileUploadController.UploadFile(Microsoft.AspNetCore.Http.IFormFile)">
+        <member name="M:MainAplikasi.Presentation.Controllers.FileUploadController.UploadFile(Microsoft.AspNetCore.Http.IFormFile,System.Int32)">
             <summary>
-            Retrieves a specific product by unique id
+            Unggah file 
             </summary>
-            <remarks>Awesomeness!</remarks>
+            <remarks>
+            terlepas dari ukuran sebuah file yang diupload berukuran besar atau kecil, yang ada akan di potong/cacah perchunk
+            </remarks>
             <response code="200">Product created</response>
             <response code="400">Product has missing/invalid values</response>
             <response code="500">Oops! Can't create your product right now</response>
