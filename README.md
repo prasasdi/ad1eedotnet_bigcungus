@@ -1,10 +1,9 @@
-# Dotnet Skeleton
-Aplikasi dotnet yang sudah dengan SSL dan Docker juga Swagger untuk dokumentasi API
+# Big Cungus
+Mainan upload file dengan chunk yang besar, hence the name I gave is Big-Chungus
 
 # Now with Docker!
-1. Buat image dulu dengan `docker build -t ad1eedotnet/skeleton:runtime .`
-2. Buat sertifikat untuk SSL terlebih dulu untuk menjalankan aplikasi
-3. Lakukan `docker-compose up -d`
+`docker-compose up` aja cukup.
+Walaupun begitu, sesuaikan port tiap aplikasi supaya tidak bentrok dengan aplikasi yang sudah ada
 
 ### .env
 ```
