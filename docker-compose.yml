@@ -1,28 +1,28 @@
 version: '3.8' 
 
 services: 
-  postgres:
-    image: postgres:latest
-    container_name: ad1ee_dotnetskeleton_db
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DB}
-    ports:
-      - "5440:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
+  # postgres:
+  #   image: postgres:latest
+  #   container_name: ad1ee_cungus_db
+  #   environment:
+  #     POSTGRES_USER: ${POSTGRES_USER}
+  #     POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+  #     POSTGRES_DB: ${POSTGRES_DB}
+  #   ports:
+  #     - "5440:5432"
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
 
-  dotnetskeleton: 
-    container_name: ad1ee_dotnetskeleton_runtime
-    depends_on:
-      - postgres
-    image: ad1eedotnet/skeleton:runtime 
+  ad1eecungusservice: 
+    container_name: ad1ee_cungus_service
+    # depends_on:
+    #   - postgres
+    image: ad1eedotnet/cungus:nossl
     build: 
       context: .
     ports: 
       - "8080:5000" 
-      - "8081:5001"
+      # - "8081:5001"
     environment: 
       - ASPNETCORE_Kestrel__Certificates__Default__Password=${ASPNETCORE_Kestrel_Certificates_Default_Password}
       - ASPNETCORE_Kestrel__Certificates__Default__Path=${ASPNETCORE_Kestrel_Certificates_Default_Path}
@@ -30,5 +30,13 @@ services:
     volumes:  
       - ${USERPROFILE}/.aspnet/https:/https/  
 
+  ad1eecunguswebserver:
+    container_name: ad1ee_cungus_frontend
+    build:
+      context: ./frontend
+    ports:
+      - "3030:3030"
+    environment:
+      - NODE_ENV=production
 volumes:
   postgres_data:

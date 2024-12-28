@@ -10,5 +10,6 @@ RUN dotnet publish ./MainAplikasi/MainAplikasi.csproj -o /publish/
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 
 WORKDIR /publish 
 COPY --from=build-image /publish . 
-ENV ASPNETCORE_URLS=https://+:5001;http://+:5000 
+# ENV ASPNETCORE_URLS=https://+:5001;http://+:5000 
+ENV ASPNETCORE_URLS=http://+:5000 
 ENTRYPOINT ["dotnet", "MainAplikasi.dll"] 
