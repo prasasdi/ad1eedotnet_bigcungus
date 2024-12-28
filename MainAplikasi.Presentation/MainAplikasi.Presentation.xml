@@ -4,7 +4,7 @@
         <name>MainAplikasi.Presentation</name>
     </assembly>
     <members>
-        <member name="M:MainAplikasi.Presentation.Controllers.FileUploadController.UploadFile(Microsoft.AspNetCore.Http.IFormFile,System.Int32)">
+        <member name="M:MainAplikasi.Presentation.Controllers.FileUploadController.UploadFile(Microsoft.AspNetCore.Http.IFormFile,System.Int32,System.Int32)">
             <summary>
             Unggah file 
             </summary>
